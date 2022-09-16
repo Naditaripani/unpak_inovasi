@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Info_inovator;
+use App\Models\DataDosen;
 use App\Models\Sumber_pendanaan;
 use Illuminate\Http\Request;
 
@@ -18,7 +18,7 @@ class Sumber_pendanaanController extends Controller
 
     public function create()
     {
-        $sumber_pendanaans = Info_inovator::all();
+        $sumber_pendanaans = DataDosen::all();
         return view('dashboard.sumber_pendanaan.create', compact ('sumber_pendanaans'));
     }
 
@@ -26,45 +26,52 @@ class Sumber_pendanaanController extends Controller
     {
         $request->validate([
 
-            "id_inovator" => "required",
+            // "id_pribadi" => "required",
             "tahun_dana" => "required",
             "total_dana" => "required",
             "sumber_dana" => "required",
-           
             
         ]);
 
-        $info_inovators = Info_inovator::findOrFail($request->id_inovator);
+        // $input = $request->all();
+        // $input = $request->validate([
+
+        //     "tahun_dana" => "required",
+        //     "total_dana" => "required",
+        //     "sumber_dana" => "required",
+
+        // ]);
+        // $input['id_pribadi'] = auth()->user()->id;
+
+        // $datadosens = DataDosen::findOrFail($request->id_pribadi);
 
         Sumber_pendanaan::create($request->all());
 
-        return redirect()->route('sumber_pendanaan.index');
+        return redirect()->route('sumber_pendanaan.index')->with('success', 'Data berhasil ditambahkan.');
 
 
     }
 
     public function edit(Sumber_pendanaan $sumber_pendanaan)
     {
-        $info_inovators = Info_inovator::all();
-        return view('dashboard.sumber_pendanaan.edit', compact('info_inovators','sumber_pendanaan'));
+        // $datadosens = DataDosen::all();
+        return view('dashboard.sumber_pendanaan.edit', compact('sumber_pendanaan'));
     }
 
     public function update(Request $request, Sumber_pendanaan $sumber_pendanaan)
     {
         $request->validate([
             
-            "id_inovator" => "required",
+            // "id_pribadi" => "required",
             "tahun_dana" => "required",
             "total_dana" => "required",
             "sumber_dana" => "required",
-            
-            
-            
+
         ]);
 
         $sumber_pendanaan->update($request->all());
 
-        return redirect()->route('sumber_pendanaan.index');
+        return redirect()->route('sumber_pendanaan.index')->with('success', 'Data berhasil diedit.');
     }
 
     public function destroy($id)
@@ -74,7 +81,7 @@ class Sumber_pendanaanController extends Controller
        if($sumber_pendanaan){
         $sumber_pendanaan->delete();
 
-        return redirect()->route('sumber_pendanaan.index');
+        return redirect()->route('sumber_pendanaan.index')->with('success', 'Data berhasil dihapus.');
        }
     }
     

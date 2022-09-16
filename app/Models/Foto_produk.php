@@ -9,12 +9,12 @@ class Foto_produk extends Model
 {
     use HasFactory;
     protected $table = 'foto_produk';
-    protected $fillable = ['id_inovator','foto'];
+    protected $fillable = ['foto'];
 
 
-    public function datadosen()
-    {
-        return $this->belongsTo(DataDosen::class,'id_pribadi', 'id');
-    }
+    // public function datadosen()
+    // {
+    //     return $this->belongsTo(DataDosen::class,'id_pribadi', 'id');
+    // }
 }
 

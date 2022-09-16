@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Info_kemajuan extends Model
 {
     use HasFactory;
-    protected $table = 'info_dilaksanakan';
-    protected $fillable = ['id_inovator','id_pertanyaan','jawaban','keterangan'];
+    protected $table = 'info_kemajuan';
+    protected $fillable = ['id_pribadi','id_pertanyaan','jawaban','keterangan'];
 
 
-    public function info_inovator()
+    public function datadosens()
     {
-        return $this->belongsTo(Info_inovator::class,'id_inovator', 'id');
+        return $this->belongsTo(DataDosen::class,'id_pribadi', 'id');
     }
 
-    public function pertanyaan()
+    public function pertanyaans()
     {
         return $this->belongsTo(Pertanyaan::class,'id_pertanyaan', 'id');
     }

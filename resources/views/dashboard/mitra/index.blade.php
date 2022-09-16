@@ -26,7 +26,7 @@
                                     <th>Alamat Mitra</th>
                                     <th>Peran Mitra</th>
                                     <th>Status Kerjasama</th>
-                                    <th>id </th>
+                                    {{-- <th>id </th> --}}
 
                                     <th>Aksi</th>
                                 </tr>
@@ -40,7 +40,7 @@
                                         <td>{{ $mitra->alamat_mitra }}</td>
                                         <td>{{ $mitra->peran_mitra }}</td>
                                         <td>{{ $mitra->status_kerjasama }}</td>
-                                        <td>{{ $mitra->info_inovator->id ?? 'Tidak ada id' }}</td>
+                                        {{-- <td>{{ $mitra->info_inovator->id ?? 'Tidak ada id' }}</td> --}}
 
                                         
                                         <td class="d-flex jutify-content-center">

@@ -24,7 +24,7 @@
                                 <div class="form-group mb-3">
                                     <label for="nidn">NIDN</label>
                                     <input type="" class="form-control @error('nidn') is-invalid @enderror" id="nidn"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('nidn', $anggota_tim->nidn) }}" name="nidn">
+                                        placeholder="Masukkan NIDN" value="{{ old('nidn', $anggota_tim->nidn) }}" name="nidn">
 
                                     @error('nidn')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -35,9 +35,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
-                                    <label for="keahlian">Insitusi</label>
+                                    <label for="keahlian">Institusi</label>
                                     <input type="" class="form-control @error('keahlian') is-invalid @enderror" id="keahlian"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('keahlian', $anggota_tim->keahlian) }}" name="keahlian">
+                                        placeholder="Masukkan Institusi" value="{{ old('keahlian', $anggota_tim->keahlian) }}" name="keahlian">
 
                                     @error('keahlian')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
                                     <label for="anggota_tims">info_inovator anggota_tim</label>
@@ -64,7 +64,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row">
                             <div class="col-6">

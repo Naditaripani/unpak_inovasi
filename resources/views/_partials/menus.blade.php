@@ -44,12 +44,12 @@
 
 @if (Auth::user()->role == 'dosen')
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a class="nav-link {{ $routeActive == 'info_inovator.index' ? 'active' : '' }}" href="{{ route('info_inovator.index') }}">
         <i class="fas fa-file text-success"></i>
         <span class="nav-link-text">Data Inovator</span>
     </a>
-</li>
+</li> --}}
 <li class="nav-item">
     <a class="nav-link {{ $routeActive == 'mitra.index' ? 'active' : '' }}" href="{{ route('mitra.index') }}">
         <i class="fas fa-file text-success"></i>
@@ -78,6 +78,12 @@
     <a class="nav-link {{ $routeActive == 'info_dilaksanakan.index' ? 'active' : '' }}" href="{{ route('info_dilaksanakan.index') }}">
         <i class="fas fa-file text-success"></i>
         <span class="nav-link-text">Data Dilaksanakan</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link {{ $routeActive == 'info_kemajuan.index' ? 'active' : '' }}" href="{{ route('info_kemajuan.index') }}">
+        <i class="fas fa-file text-success"></i>
+        <span class="nav-link-text">Data Informasi Kemajuan</span>
     </a>
 </li>
 

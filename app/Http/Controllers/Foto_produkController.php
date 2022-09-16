@@ -10,7 +10,7 @@ class Foto_produkController extends Controller
 {
     public function index()
     {
-        $foto_produks = DataDosen::orderBy('id');
+        $foto_produks = Foto_produk::orderBy('id');
         $foto_produks = $foto_produks->paginate(50);
 
         return view('dashboard.foto_produk.index', compact('foto_produks'));
@@ -18,46 +18,48 @@ class Foto_produkController extends Controller
 
     public function create()
     {
-        $foto_produks = DataDosen::all();
+        $foto_produks = Foto_produk::all();
         return view('dashboard.foto_produk.create', compact ('foto_produks'));
     }
 
     public function store(Request $request)
     {
-        $input = $request->all();
-        $input = $request->validate([
+        // $input = $request->all();
+        // $input = $request->validate([
 
             
-            "foto" => "required",
+        //     "foto" => "required",
+        // ]);
+        // $input['id_pribadi'] = auth()->user()->id;
+        //  dd($input);
+
+        $request->validate([
+            'foto' => 'required',
         ]);
-        $input['id_pribadi'] = auth()->user()->id;
-         dd($input);
 
-       
-
-        $data = Foto_produk::create($request->$input());
+        $data = Foto_produk::create($request->all());
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotoproduk/', $request->file('foto')->getClientOriginalName());
             $data->foto = $request->file('foto')->getClientOriginalName();
             $data->save();
         }
 
-        return redirect()->route('foto_produk.index');
+        return redirect()->route('foto_produk.index')->with('success', 'Data berhasil ditambahkan.');
 
 
     }
 
     public function edit(Foto_produk $foto_produk)
     {
-        $datadosens = DataDosen::all();
-        return view('dashboard.foto_produk.edit', compact('datadosens','foto_produk'));
+        // $datadosens = DataDosen::all();
+        return view('dashboard.foto_produk.edit', compact('foto_produk'));
     }
 
     public function update(Request $request, Foto_produk $foto_produk)
     {
         $request->validate([
             
-            "id_pribadi" => "required",
+            // "id_pribadi" => "required",
             "foto" => "required",
         ]);
 
@@ -77,7 +79,7 @@ class Foto_produkController extends Controller
 	   }
     	$foto_produk->save();
 
-        return redirect()->route('foto_produk.index');
+        return redirect()->route('foto_produk.index')->with('success', 'Data berhasil diedit.');
     }
 
     public function destroy($id)
@@ -87,7 +89,7 @@ class Foto_produkController extends Controller
        if($foto_produk){
         $foto_produk->delete();
 
-        return redirect()->route('foto_produk.index');
+        return redirect()->route('foto_produk.index')->with('success', 'Data berhasil dihapus.');
        }
     }
     

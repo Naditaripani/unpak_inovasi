@@ -18,6 +18,7 @@ use App\Http\Controllers\DataDosenController;
 use App\Http\Controllers\Sumber_pendanaanController;
 use App\Http\Controllers\Foto_produkController;
 use App\Http\Controllers\Info_dilaksanakanController;
+use App\Http\Controllers\Info_kemajuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,5 @@ Route::middleware('auth')->group(function() {
     Route::resource('foto_produk', Foto_produkController::class);
     Route::resource('info_dilaksanakan', Info_dilaksanakanController::class);
     Route::resource('datadosen', DataDosenController::class);
+    Route::resource('info_kemajuan', Info_kemajuanController::class);
 });

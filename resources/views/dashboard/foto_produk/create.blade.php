@@ -25,7 +25,7 @@
                                     <label for="foto">foto</label>
                                     <img class="img-preview img-fluid mb-3 col-sm-2">
                                     <input type="file" class="form-control @error('foto') is-invalid @enderror" id="foto"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('foto') }}"  name="foto"onchange="previewImage()" accept="image/*">
+                                        placeholder="" value="{{ old('foto') }}"  name="foto" onchange="previewImage()" accept="image/*">
 
                                     @error('foto')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>

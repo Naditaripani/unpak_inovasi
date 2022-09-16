@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Data Pertanyaan')
+@section('title', 'Dokumentasi')
 
-@section('title-header', 'Data Pertanyaan')
+@section('title-header', 'Dokumentasi')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-    <li class="breadcrumb-item active">Data Pertanyaan</li>
+    <li class="breadcrumb-item active">Dokumentasi</li>
 @endsection
 
 @section('action_btn')
@@ -16,19 +16,39 @@
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-header bg-transparent border-0 text-dark">
-                    <h2 class="card-title h3">Data Inovator</h2>
+                    <h2 class="card-title h3">Dokumentasi</h2>
                     <div class="table-responsive">
                         <table class="table table-flush table-hover">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Foto</th>
-                                 
-                                    <th>id </th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            
+                            <tbody>
+                                @forelse ($foto_produks as $foto_produk)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        {{-- <td>{{ $foto_produk->file_foto }}</td> --}}
+                                        <td>
+                                            <img src="{{ asset('fotoproduk/'. $foto_produk->foto) }}" height="25%" width="25%" alt="">
+                                        </td>
+                                        <td class="d-flex jutify-content-center">
+                                            <a href="{{route('foto_produk.edit', $foto_produk->id)}}" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                            <form id="delete-form-{{ $foto_produk->id }}" action="{{ route('foto_produk.destroy', $foto_produk->id) }}" class="d-none" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                            <button onclick="deleteForm('{{$foto_produk->id}}')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3">Tidak ada data</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
                             <tfoot>
                                 <tr>
                                     <th colspan="4">

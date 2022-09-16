@@ -29,4 +29,14 @@ class DataDosen extends Model
     {
         return $this->hasMany( Info_dilaksanakan::class, 'id_pribadi', 'id');
     }
+
+    public function sumber_pendanaans()
+    {
+        return $this->hasMany( Sumber_pendanaan::class, 'id_pribadi', 'id');
+    }
+
+    public function info_kemajuan()
+    {
+        return $this->hasMany( Info_kemajuan::class, 'id_pribadi', 'id');
+    }
 }

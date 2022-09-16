@@ -41,9 +41,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
-                                    <label for="keahlian">keahlian</label>
+                                    <label for="keahlian">Keahlian</label>
                                     <input type="text" class="form-control @error('keahlian') is-invalid @enderror" id="keahlian"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('keahlian') }}" name="keahlian">
+                                        placeholder="Masukkan Keahlian" value="{{ old('keahlian') }}" name="keahlian">
 
                                     @error('keahlian')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -51,30 +51,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <label for="anggota_tims">id inovator</label>
-                                    {{-- <select type="number" class="form-control @error('id') is-invalid @enderror" id="id"
-                                        placeholder="id" value="{{ old('id') }}" name="id"> --}}
-                                    
-                                    <select name="id_inovator" class="form-control" id="">
-                                        <option disabled selected> id </option>
-                                        @foreach ($anggota_tims as $anggota_tim)
-                                            <option value="{{ $anggota_tim->id }}">{{ $anggota_tim->id }}</option>
-                                        @endforeach
-                                    </select>
-
-
-                                    @error('anggota_tim')
-                                        <div class="d-block invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-                       
-                        
-                        
+                         
                         <div class="row">
                             <div class="col-6">
                                 <button type="submit" class="btn btn-sm btn-primary">Tambah</button>

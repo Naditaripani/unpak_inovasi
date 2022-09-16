@@ -19,39 +19,39 @@ class Anggota_timController extends Controller
     public function create()
     {
         $anggota_tims = Info_inovator::all();
-        return view('dashboard.anggota_tim.create', compact ('anggota_tims'));
+        return view('dashboard.anggota_tim.create', compact('anggota_tims'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
 
-            "id_inovator" => "required",
+            // "id_inovator" => "required",
             "nidn" => "required",
             "keahlian" => "required",
             
         ]);
 
-        $info_inovators = Info_inovator::findOrFail($request->id_inovator);
+        // $info_inovators = Info_inovator::findOrFail($request->id_inovator);
 
         Anggota_tim::create($request->all());
 
-        return redirect()->route('anggota_tim.index');
+        return redirect()->route('anggota_tim.index')->with('success', 'Data pribadi dosen berhasil ditambahkan.');
 
 
     }
 
     public function edit(Anggota_tim $anggota_tim)
     {
-        $info_inovators = Info_inovator::all();
-        return view('dashboard.anggota_tim.edit', compact('info_inovators','anggota_tim'));
+        // $info_inovators = Info_inovator::all();
+        return view('dashboard.anggota_tim.edit', compact('anggota_tim'));
     }
 
     public function update(Request $request, Anggota_tim $anggota_tim)
     {
         $request->validate([
             
-            "id_inovator" => "required",
+            // "id_inovator" => "required",
             "nidn" => "required",
             "keahlian" => "required",
             
@@ -60,7 +60,7 @@ class Anggota_timController extends Controller
 
         $anggota_tim->update($request->all());
 
-        return redirect()->route('anggota_tim.index');
+        return redirect()->route('anggota_tim.index')->with('success', 'Data berhasil diedit.');
     }
 
     public function destroy($id)
@@ -70,7 +70,7 @@ class Anggota_timController extends Controller
        if($anggota_tim){
         $anggota_tim->delete();
 
-        return redirect()->route('anggota_tim.index');
+        return redirect()->route('anggota_tim.index')->with('success', 'Data berhasil dihapus.');
        }
     }
     

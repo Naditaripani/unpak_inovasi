@@ -10,13 +10,13 @@ class Anggota_tim extends Model
     use HasFactory;
 
     protected $table = 'anggota_tim';
-    protected $fillable = ['id_inovator','nidn', 'keahlian'];
+    protected $fillable = ['nidn', 'keahlian'];
 
 
-    public function info_inovator()
-    {
-        return $this->belongsTo(Info_inovator::class,'id_inovator', 'id');
-    }
+    // public function info_inovator()
+    // {
+    //     return $this->belongsTo(Info_inovator::class,'id_inovator', 'id');
+    // }
 
     public function datadosens()
     {

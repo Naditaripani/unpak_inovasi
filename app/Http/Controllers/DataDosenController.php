@@ -51,7 +51,7 @@ class DataDosenController extends Controller
             $data->save();
         }
 
-        return redirect()->route('datadosen.index')->with('success', 'Data pribadi dosen berhasil ditambahkan.');;
+        return redirect()->route('datadosen.index')->with('success', 'Data pribadi dosen berhasil ditambahkan.');
     }
 
     public function show(DataDosen $datadosen)
@@ -111,7 +111,7 @@ class DataDosenController extends Controller
        if($datadosen){
         $datadosen->delete();
 
-        return redirect()->route('datadosen.index')->with('success', 'Data pribadi dosen berhasil dihapus.');;
+        return redirect()->route('datadosen.index')->with('success', 'Data pribadi dosen berhasil dihapus.');
        }
        
     }

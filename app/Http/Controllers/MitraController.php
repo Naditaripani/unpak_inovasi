@@ -26,7 +26,7 @@ class MitraController extends Controller
     {
         $request->validate([
 
-            "id_inovator"=> "required",
+            // "id_inovator"=> "required",
             "nama_mitra" => "required",
             "alamat_mitra" => "required",
             "peran_mitra" => "required",
@@ -34,26 +34,26 @@ class MitraController extends Controller
             
         ]);
 
-        $info_inovators = Info_inovator::findOrFail($request->id_inovator);
+        // $info_inovators = Info_inovator::findOrFail($request->id_inovator);
 
         Mitra::create($request->all());
 
-        return redirect()->route('mitra.index');
+        return redirect()->route('mitra.index')->with('success', 'Data pribadi dosen berhasil ditambahkan.');
 
 
     }
 
     public function edit(Mitra $mitra)
     {
-        $info_inovators = Info_inovator::all();
-        return view('dashboard.mitra.edit', compact('info_inovators','mitra'));
+        // $info_inovators = Info_inovator::all();
+        return view('dashboard.mitra.edit', compact('mitra'));
     }
 
     public function update(Request $request, Mitra $mitra)
     {
         $request->validate([
             
-            "id_inovator" => "required",
+            // "id_inovator" => "required",
             "nama_mitra" => "required",
             "alamat_mitra" => "required",
             "peran_mitra" => "required",
@@ -63,7 +63,7 @@ class MitraController extends Controller
 
         $mitra->update($request->all());
 
-        return redirect()->route('mitra.index');
+        return redirect()->route('mitra.index')->with('success', 'Data berhasil diedit.');
     }
 
     public function destroy($id)
@@ -73,7 +73,7 @@ class MitraController extends Controller
        if($mitra){
         $mitra->delete();
 
-        return redirect()->route('mitra.index');
+        return redirect()->route('mitra.index')->with('success', 'Data berhasil dihapus.');
        }
     }
     

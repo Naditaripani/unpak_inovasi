@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
                                     <label for="sumber_pendanaans">info_inovator sumber_pendanaan</label>
@@ -77,7 +77,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     <div class="row">
                             <div class="col-6">
                                 <button type="submit" class="btn btn-sm btn-primary">Ubah</button>

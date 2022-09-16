@@ -22,9 +22,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
-                                    <label for="nama_mitra">nama_mitra</label>
+                                    <label for="nama_mitra">Nama Mitra</label>
                                     <input type="" class="form-control @error('nama_mitra') is-invalid @enderror" id="nama_mitra"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('nama_mitra', $mitra->nama_mitra) }}" name="nama_mitra">
+                                        placeholder="Masukkan Nama Mitra" value="{{ old('nama_mitra', $mitra->nama_mitra) }}" name="nama_mitra">
 
                                     @error('nama_mitra')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -37,7 +37,7 @@
                                 <div class="form-group mb-3">
                                     <label for="alamat_mitra">Alamat Mitra</label>
                                     <input type="" class="form-control @error('alamat_mitra') is-invalid @enderror" id="alamat_mitra"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('alamat_mitra', $mitra->alamat_mitra) }}" name="alamat_mitra">
+                                        placeholder="Masukkan Alamat Mitra" value="{{ old('alamat_mitra', $mitra->alamat_mitra) }}" name="alamat_mitra">
 
                                     @error('alamat_mitra')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -50,7 +50,7 @@
                                 <div class="form-group mb-3">
                                     <label for="peran_mitra">Peran Mitra</label>
                                     <input type="" class="form-control @error('peran_mitra') is-invalid @enderror" id="peran_mitra"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('peran_mitra', $mitra->peran_mitra) }}" name="peran_mitra">
+                                        placeholder="Masukkan Peran Mitra" value="{{ old('peran_mitra', $mitra->peran_mitra) }}" name="peran_mitra">
 
                                     @error('peran_mitra')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -61,9 +61,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
-                                    <label for="status_kerjasama">status kerjasama</label>
+                                    <label for="status_kerjasama">Status Kerjasama</label>
                                     <input type="" class="form-control @error('status_kerjasama') is-invalid @enderror" id="status_kerjasama"
-                                        placeholder="Masukkan Kode Prodi" value="{{ old('status_kerjasama', $mitra->status_kerjasama) }}" name="status_kerjasama">
+                                        placeholder="Masukkan Status Kerjasama" value="{{ old('status_kerjasama', $mitra->status_kerjasama) }}" name="status_kerjasama">
 
                                     @error('status_kerjasama')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
                                     <label for="mitras">info_inovator mitra</label>
@@ -90,7 +90,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     <div class="row">
                             <div class="col-6">
                                 <button type="submit" class="btn btn-sm btn-primary">Ubah</button>

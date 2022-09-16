@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
                                     
@@ -201,14 +201,14 @@
                                     <input type="hidden" class="form-control @error('id_pribadi') is-invalid @enderror" id="id_pribadi"
                                         placeholder="" value="{{ Auth::user()->nidn }}" name="id_pribadi">
 
-<h1>{{ Auth::user()->nidn }}</h1>
+                                    <h1>{{ Auth::user()->nidn }}</h1>
 
                                     @error('info_dilaksanakan')
                                         <div class="d-block invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <div class="row">

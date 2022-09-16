@@ -24,7 +24,7 @@
                                     <th>No</th>
                                     <th>NIDN</th>
                                     <th>Keahlian</th>
-                                    <th>id </th>
+                                    {{-- <th>id </th> --}}
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -34,7 +34,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $anggota_tim->nidn }}</td>
                                         <td>{{ $anggota_tim->keahlian }}</td>
-                                        <td>{{ $anggota_tim->info_inovator->id ?? 'Tidak ada id' }}</td>
+                                        {{-- <td>{{ $anggota_tim->info_inovator->id ?? 'Tidak ada id' }}</td> --}}
                                         <td class="d-flex jutify-content-center">
                                             <a href="{{route('anggota_tim.edit', $anggota_tim->id)}}" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
                                             <form id="delete-form-{{ $anggota_tim->id }}" action="{{ route('anggota_tim.destroy', $anggota_tim->id) }}" class="d-none" method="post">

@@ -25,7 +25,7 @@
                                     <th>Tahun Dana</th>
                                     <th>Total Dana</th>
                                     <th>Sumber Dana</th>
-                                    <th>id </th>
+                                    {{-- <th>id </th> --}}
 
                                     <th>Aksi</th>
                                 </tr>
@@ -38,7 +38,7 @@
                                         <td>{{ $sumber_pendanaan->tahun_dana }}</td>
                                         <td>{{ $sumber_pendanaan->total_dana }}</td>
                                         <td>{{ $sumber_pendanaan->sumber_dana }}</td>
-                                        <td>{{ $sumber_pendanaan->info_inovator->id ?? 'Tidak ada id' }}</td>
+                                        {{-- <td>{{ $sumber_pendanaan->info_inovator->id ?? 'Tidak ada id' }}</td> --}}
 
                                         
                                         <td class="d-flex jutify-content-center">

@@ -180,7 +180,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
                                 <div class="form-group mb-3">
                                     <label for="info_dilaksanakans">info_inovator dilaksanakan</label>
@@ -199,7 +199,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         
 
                         <div class="row">

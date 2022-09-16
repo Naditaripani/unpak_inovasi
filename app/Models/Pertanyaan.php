@@ -17,5 +17,10 @@ class Pertanyaan extends Model
         return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
     }
 
+    public function info_kemajuans()
+    {
+        return $this->hasMany(Info_kemajuan::class, 'id_pribadi', 'id');
+    }
+
     //  protected $guarded = [];
 }

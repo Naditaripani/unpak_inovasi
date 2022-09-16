@@ -71,11 +71,11 @@
                                     <td>:</td>
                                     <td>{{ $info_dilaksanakan->keunggulan }}</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td>id</td>
                                     <td>:</td>
                                     <td>{{ $info_dilaksanakan->id_pribadi }}</td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td><a href="{{route('info_dilaksanakan.index')}}" class="btn btn-sm btn-primary">Kembali</a></td>
                                     <td></td>
